@@ -15,7 +15,7 @@ app.use(router);
 app.listen(PORT, () => {
   try {
     mongoose.connect(
-      "mongodb+srv://admin:123456admin@cluster0.hzn2q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hzn2q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
     );
     console.log("mongoose is connected");
   } catch (error) {
